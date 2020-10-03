@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=1]
+
+[node name="TileMap" type="TileMap"]
+cell_size = Vector2( 16, 16 )
+cell_y_sort = true
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 110.402, 89.1251 )
