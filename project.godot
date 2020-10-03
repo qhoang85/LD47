@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="LD47"
 config/icon="res://icon.png"
 
+[autoload]
+
+player_stats="*res://player_stats.gd"
+
 [display]
 
 window/size/width=320
