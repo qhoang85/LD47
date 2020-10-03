@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/top.gd" type="Script" id=2]
+
+[node name="StatsBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Day" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 16.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day" type="Label" parent="Day"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+custom_fonts/font = ExtResource( 1 )
+text = "DAY:1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Funds" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -15.0
+margin_right = 160.0
+margin_bottom = 1.00002
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Funds" type="Label" parent="Funds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+custom_fonts/font = ExtResource( 1 )
+text = "$100000/100000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
