@@ -62,4 +62,4 @@ func _move(delta : float):
 
 func play_walk_sfx():
 	if !self.is_reflection:
-		sfx.play("step")
+		sfx.play("step", rand_range(0.8, 1.2), -10)

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://graphics/ending_robber.png" type="Texture" id=1]
+[ext_resource path="res://graphics/ending_judge.png" type="Texture" id=2]
+[ext_resource path="res://graphics/ending_doctor.png" type="Texture" id=3]
+[ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Ending" type="Node2D"]
+
+[node name="ending_doctor" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Label" type="Label" parent="ending_doctor"]
+margin_left = 168.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "On your way home,
+your appendix
+burst. You paid
+$89 500 in medical
+bills."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ending_robber" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="ending_robber"]
+margin_left = 168.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "On your way home,
+you got robbed.
+You lost $89 500."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ending_judge" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="ending_judge"]
+margin_left = 168.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "On your way home,
+your wife filed
+for divorce. She
+got $89 500."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="VBoxContainer" parent="."]
+margin_left = 224.0
+margin_top = 88.0
+margin_right = 304.0
+margin_bottom = 168.0
+
+[node name="Home" type="Button" parent="CenterContainer"]
+margin_right = 80.0
+margin_bottom = 15.0
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "GO HOME"
+flat = true
+
+[node name="Quit" type="Button" parent="CenterContainer"]
+margin_top = 19.0
+margin_right = 80.0
+margin_bottom = 34.0
+custom_styles/focus = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "QUIT"
+flat = true
