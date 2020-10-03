@@ -3,10 +3,11 @@ extends Node
 var sounds_path = "res://Audio/SFX/"
 
 var sounds = {
-	"Bullet" : load(sounds_path + "bullet.wav"),
-	"Explosion" : load(sounds_path + "explosion.wav"),
-	"Hurt" : load(sounds_path + "hurt.wav"),
-	"Melee" : load(sounds_path + "melee.wav")
+	"bullet" : load(sounds_path + "bullet.wav"),
+	"explosion" : load(sounds_path + "explosion.wav"),
+	"click" : load(sounds_path + "click.wav"),
+	"hurt" : load(sounds_path + "hurt.wav"),
+	"melee" : load(sounds_path + "melee.wav")
 }
 
 onready var sound_players = get_children()

@@ -14,10 +14,12 @@ onready var howto_back_button = $HowTo/CenterContainer/VBoxContainer/Back
 func _ready():
 	start_button.grab_focus()
 	background.frame = 0
+	music.play_song("song01")
 
 
 func _on_Start_pressed():
 	player_stats.reset_stats()
+	sfx.play("click", 1, -5)
 
 
 func _on_HowTo_pressed():
@@ -42,7 +44,7 @@ func _on_Start_focus_entered():
 
 func _on_Start_focus_exited():
 	start_button.set_text("start")
-
+	sfx.play("click", 1, -5)
 
 
 func _on_HowTo_focus_entered():
@@ -53,6 +55,7 @@ func _on_HowTo_focus_entered():
 
 func _on_HowTo_focus_exited():
 	howto_button.set_text("how to play")
+	sfx.play("click", 1, -5)
 
 
 func _on_HowTo_Back_pressed():
@@ -66,6 +69,10 @@ func _on_HowTo_Back_gui_input(_event):
 		howto_button.grab_focus()
 
 
+func _on_HowTo_Back_focus_exited():
+	sfx.play("click", 1, -5)
+
+
 func _on_Quit_focus_entered():
 	quit_button.set_text("-quit-")
 	pointer.rotation_degrees = -20
@@ -74,6 +81,7 @@ func _on_Quit_focus_entered():
 
 func _on_Quit_focus_exited():
 	quit_button.set_text("quit")
+	sfx.play("click", 1, -5)
 
 
 func _on_Credit_focus_entered():
@@ -84,6 +92,7 @@ func _on_Credit_focus_entered():
 
 func _on_Credit_focus_exited():
 	credit_button.set_text("by assface")
+	sfx.play("click", 1, -5)
 
 
 func _on_Credit_Back_pressed():
@@ -95,3 +104,7 @@ func _on_Credit_Back_gui_input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		credit_menu.visible = false
 		credit_button.grab_focus()
+
+
+func _on_Credit_Back_focus_exited():
+	sfx.play("click", 1, -5)

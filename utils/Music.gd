@@ -3,7 +3,9 @@ extends Node
 var songs_path = "res://Audio/Music/"
 
 var songs = {
-	"OnlySongYet" : load(songs_path + "spring - im_pathetica(cc0).ogg"),
+	"song01" : load(songs_path + "megupets - haran(cc0).ogg"),
+	"song02" : load(songs_path + "megupets - sosten(cc0).ogg"),
+	"song03" : load(songs_path + "spring - im_pathetica(cc0).ogg"),
 }
 
 onready var musicPlayer = $AudioStreamPlayer

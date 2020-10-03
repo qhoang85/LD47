@@ -12,10 +12,9 @@
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="Animation" id=4]
-resource_name = "Animate"
+[sub_resource type="Animation" id=5]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -67,7 +66,6 @@ position = Vector2( 120, 56 )
 [node name="Letter E" type="Sprite" parent="Letter E"]
 position = Vector2( 0, 8 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="Arm" type="Position2D" parent="."]
@@ -141,7 +139,7 @@ margin_top = 71.0
 margin_right = 100.0
 margin_bottom = 86.0
 focus_neighbour_bottom = NodePath("../Start")
-custom_styles/focus = SubResource( 5 )
+custom_styles/focus = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -153,7 +151,7 @@ align = 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Animate"
 playback_speed = 0.25
-anims/Animate = SubResource( 4 )
+anims/Animate = SubResource( 5 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "Animate"
@@ -336,7 +334,9 @@ __meta__ = {
 [connection signal="focus_entered" from="VBoxContainer/Credit" to="." method="_on_Credit_focus_entered"]
 [connection signal="focus_exited" from="VBoxContainer/Credit" to="." method="_on_Credit_focus_exited"]
 [connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_Credit_pressed"]
+[connection signal="focus_exited" from="HowTo/CenterContainer/VBoxContainer/Back" to="." method="_on_HowTo_Back_focus_exited"]
 [connection signal="gui_input" from="HowTo/CenterContainer/VBoxContainer/Back" to="." method="_on_HowTo_Back_gui_input"]
 [connection signal="pressed" from="HowTo/CenterContainer/VBoxContainer/Back" to="." method="_on_HowTo_Back_pressed"]
+[connection signal="focus_exited" from="Credit/CenterContainer/VBoxContainer/Back" to="." method="_on_Credit_Back_focus_exited"]
 [connection signal="gui_input" from="Credit/CenterContainer/VBoxContainer/Back" to="." method="_on_Credit_Back_gui_input"]
 [connection signal="pressed" from="Credit/CenterContainer/VBoxContainer/Back" to="." method="_on_Credit_Back_pressed"]
