@@ -2,7 +2,7 @@ extends Node
 
 
 var day = 1
-var funds = 1800
+var funds = 1000
 var goal = 100000
 
 

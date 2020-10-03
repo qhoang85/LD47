@@ -82,6 +82,7 @@ anims/use = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 0, 8 )

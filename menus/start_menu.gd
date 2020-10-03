@@ -13,6 +13,7 @@ onready var howto_back_button = $HowTo/CenterContainer/VBoxContainer/Back
 
 
 func _ready():
+	VisualServer.set_default_clear_color(Color.black)
 	start_button.grab_focus()
 	background.frame = 0
 	music.play_song("song01")
