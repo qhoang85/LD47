@@ -7,6 +7,12 @@ var _input : Vector2
 var _look_dir = 1.0
 var _is_using = false
 export(bool) var is_reflection = false
+var _is_showering = -1
+
+
+func _ready():
+	signals.connect("enter_shower", self, "take_shower")
+	signals.connect("exit_shower", self, "finish_shower")
 
 
 func _physics_process(delta):
@@ -46,10 +52,16 @@ func _process_input():
 
 
 func _move(delta : float):
+	var is_moving = false
 	if self._input.length() > 0.0:
 		self._input = self._input.normalized()
-		$AnimationPlayer.play("walk")
+		is_moving = true
 		var movement = self.move_and_slide(self._input * self.speed)
+	
+	if self._is_showering > 0:
+		$AnimationPlayer.play("shower")
+	elif is_moving:
+		$AnimationPlayer.play("walk")
 		if self._input.x != 0.0:
 			if self._sign(self._input.x) != self._sign(self._look_dir):
 				self._look_dir = self._sign(self._input.x)
@@ -62,4 +74,19 @@ func _move(delta : float):
 
 func play_walk_sfx():
 	if !self.is_reflection:
-		sfx.play("step")
+		sfx.play("step", rand_range(0.8, 1.2), -10)
+
+
+func play_shower_sound():
+	if !self.is_reflection:
+		sfx.play("shower", rand_range(0.8, 1.2), -15)
+		
+
+func take_shower():
+	self._is_showering = self._is_showering + 1
+	print("enter shower")
+	
+	
+func finish_shower():
+	self._is_showering = self._is_showering - 1
+	print("exit shower")

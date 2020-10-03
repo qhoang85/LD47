@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=1]
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/shower.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 136, 48 )
@@ -41,3 +42,6 @@ is_reflection = true
 polygon = PoolVector2Array( 56, -10, 56, 86, -8, 86, -8, -10, 48, -10, 48, -2, 0, -2, 0, 78, 48, 78, 48, -10 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="Shower" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7.38524, 60.4619 )

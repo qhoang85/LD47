@@ -8,7 +8,8 @@ var sounds = {
 	"click" : load(sounds_path + "click.wav"),
 	"hurt" : load(sounds_path + "hurt.wav"),
 	"melee" : load(sounds_path + "melee.wav"),
-	"step" : load(sounds_path + "step.wav")
+	"step" : load(sounds_path + "step.wav"),
+	"shower" : load(sounds_path + "shower.wav")
 }
 
 onready var sound_players = get_children()
