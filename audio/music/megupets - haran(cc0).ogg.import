@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/megupets - haran(cc0).ogg-acc0ba866f5491ea77fdc8e2e363fea7.oggstr"
+
+[deps]
+
+source_file="res://audio/music/megupets - haran(cc0).ogg"
+dest_files=[ "res://.import/megupets - haran(cc0).ogg-acc0ba866f5491ea77fdc8e2e363fea7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

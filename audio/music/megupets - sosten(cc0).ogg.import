@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/megupets - sosten(cc0).ogg-018c2b77e6cbd2bc425e7e2f6c8c674d.oggstr"
+
+[deps]
+
+source_file="res://audio/music/megupets - sosten(cc0).ogg"
+dest_files=[ "res://.import/megupets - sosten(cc0).ogg-018c2b77e6cbd2bc425e7e2f6c8c674d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
