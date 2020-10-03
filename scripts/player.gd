@@ -56,3 +56,8 @@ func _move(delta : float):
 		$AnimationPlayer.play("idle")
 	else:
 		$AnimationPlayer.play("use")
+
+
+func play_walk_sfx():
+	if !self.is_reflection:
+		sfx.play("step")
