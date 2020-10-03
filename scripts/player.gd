@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 class_name Player
 
 
@@ -9,9 +9,12 @@ var _is_using = false
 export(bool) var is_reflection = false
 
 
+func _physics_process(delta):
+	self._move(delta)
+
+
 func _process(delta):
 	self._process_input()
-	self._move(delta)
 
 
 func _sign(x):
@@ -46,8 +49,7 @@ func _move(delta : float):
 	if self._input.length() > 0.0:
 		self._input = self._input.normalized()
 		$AnimationPlayer.play("walk")
-		var movement = $KinematicBody2D.move_and_slide(self._input * delta * self.speed)
-		self.global_position += movement
+		var movement = self.move_and_slide(self._input * self.speed)
 		if self._input.x != 0.0:
 			if self._sign(self._input.x) != self._sign(self._look_dir):
 				self._look_dir = self._sign(self._input.x)
