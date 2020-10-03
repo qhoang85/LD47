@@ -11,6 +11,7 @@ onready var credit_back_button = $Credit/CenterContainer/VBoxContainer/Back
 onready var howto_menu = $HowTo
 onready var howto_back_button = $HowTo/CenterContainer/VBoxContainer/Back
 
+
 func _ready():
 	start_button.grab_focus()
 	background.frame = 0
