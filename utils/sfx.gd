@@ -1,6 +1,6 @@
 extends Node
 
-var sounds_path = "res://Audio/SFX/"
+var sounds_path = "res://audio/sfx/"
 
 var sounds = {
 	"bullet" : load(sounds_path + "bullet.wav"),

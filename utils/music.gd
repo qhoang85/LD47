@@ -1,6 +1,6 @@
 extends Node
 
-var songs_path = "res://Audio/Music/"
+var songs_path = "res://audio/music/"
 
 var songs = {
 	"song01" : load(songs_path + "megupets - haran(cc0).ogg"),
