@@ -6,6 +6,11 @@
 
 [node name="TileMap" type="Node2D"]
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
 [node name="SpriteMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -14,8 +19,3 @@ format = 1
 
 [node name="Player" parent="SpriteMap" instance=ExtResource( 3 )]
 position = Vector2( 110.402, 89.1251 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-format = 1
