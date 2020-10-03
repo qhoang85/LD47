@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://graphics/ending_robber.png" type="Texture" id=1]
 [ext_resource path="res://graphics/ending_judge.png" type="Texture" id=2]
 [ext_resource path="res://graphics/ending_doctor.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ending.gd" type="Script" id=4]
 [ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Ending" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="ending_doctor" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -94,3 +96,5 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "QUIT"
 flat = true
+
+[node name="Timer" type="Timer" parent="."]
