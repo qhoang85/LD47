@@ -21,6 +21,7 @@ func _ready():
 func _on_Start_pressed():
 	player_stats.reset_stats()
 	sfx.play("click", 1, -5)
+	get_tree().change_scene("res://scenes/bedroom.tscn")
 
 
 func _on_HowTo_pressed():
