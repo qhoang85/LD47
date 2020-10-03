@@ -5,6 +5,8 @@ class_name Player
 export(float) var speed = 20.0
 var _input : Vector2
 var _look_dir = 1.0
+var _is_using = false
+export(bool) var is_reflection = false
 
 
 func _process(delta):
@@ -20,10 +22,20 @@ func _sign(x):
 
 func _process_input():
 	self._input = Vector2(0.0, 0.0)
+	self._is_using = false
+	if Input.is_action_pressed("player_use"):
+		self._is_using = true
+		return
 	if Input.is_action_pressed("player_up"):
-		self._input.y -= 1.0
+		if !self.is_reflection:
+			self._input.y -= 1.0
+		else:
+			self._input.y += 1.0
 	if Input.is_action_pressed("player_down"):
-		self._input.y += 1.0
+		if !self.is_reflection:
+			self._input.y += 1.0
+		else:
+			self._input.y -= 1.0
 	if Input.is_action_pressed("player_left"):
 		self._input.x -= 1.0
 	if Input.is_action_pressed("player_right"):
@@ -40,5 +52,7 @@ func _move(delta : float):
 			if self._sign(self._input.x) != self._sign(self._look_dir):
 				self._look_dir = self._sign(self._input.x)
 				$Sprite.scale.x = self._look_dir
-	else:
+	elif self._is_using == false:
 		$AnimationPlayer.play("idle")
+	else:
+		$AnimationPlayer.play("use")
