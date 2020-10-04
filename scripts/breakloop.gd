@@ -34,12 +34,14 @@ func _unhandled_input(_event):
 			scene_transition.right_in()
 			yield(scene_transition.animation_player, "animation_finished")
 			scene_transition.right_out()
+# warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
 	if doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/introloop.tscn")
 		player_stats.has_looped = true
 
@@ -66,7 +68,8 @@ func _on_No_pressed():
 	scene_transition.right_in()
 	yield(scene_transition.animation_player, "animation_finished")
 	scene_transition.right_out()
-	get_tree().change_scene("res://scenes/bedroom.tscn")
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://scenes/introloop.tscn")
 	player_stats.has_looped = true
 
 

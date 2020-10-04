@@ -12,7 +12,9 @@ export(bool) var disable_motion_reset = false
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	signals.connect("enter_shower", self, "take_shower")
+# warning-ignore:return_value_discarded
 	signals.connect("exit_shower", self, "finish_shower")
 
 
@@ -22,6 +24,7 @@ func _unhandled_input(_event):
 			scene_transition.right_in()
 			yield(scene_transition.animation_player, "animation_finished")
 			scene_transition.right_out()
+# warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
 
@@ -30,6 +33,7 @@ func _physics_process(delta):
 	self._move(delta)
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	self._process_input()
 
@@ -63,6 +67,7 @@ func _process_input():
 		self._input.x += 1.0
 
 
+# warning-ignore:unused_argument
 func _move(delta : float):
 	var is_moving = false
 	if self._input.length() > 0.0:

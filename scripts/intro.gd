@@ -15,6 +15,7 @@ func _unhandled_input(_event):
 			scene_transition.right_in()
 			yield(scene_transition.animation_player, "animation_finished")
 			scene_transition.right_out()
+# warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
 	
@@ -22,4 +23,5 @@ func _unhandled_input(_event):
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/bedroom.tscn")

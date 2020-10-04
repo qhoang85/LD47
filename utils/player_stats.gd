@@ -25,4 +25,5 @@ func _on_work_timer_timeout():
 	scene_transition.right_in()
 	yield(scene_transition.animation_player, "animation_finished")
 	scene_transition.right_out()
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/ending.tscn")

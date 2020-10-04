@@ -6,6 +6,7 @@ onready var funds = $Funds/Funds
 
 func _ready():
 	update_stats_bar()
+# warning-ignore:return_value_discarded
 	signals.connect("update_work_time", self, "on_update_work_time")
 	if get_parent().get_parent().is_in_group("work"):
 		$Hour/Day.visible = false
