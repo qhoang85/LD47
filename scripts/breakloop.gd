@@ -7,15 +7,15 @@ onready var yes_button = $CenterContainer/VBoxContainer/HBoxContainer/Yes
 onready var no_button = $CenterContainer/VBoxContainer/HBoxContainer/No
 onready var animation_player = $AnimationPlayer
 var messages = [
-	"Insufficient funds.",
-	"I am too scared.",
-	"Maybe tomorrow will be different.",
-	"But how?",
-	"The loop is not so bad.",
-	"I am not brave enough.",
-	"I am safe in the loop.",
-	"I don't want to!",
-	"I will do it whey you do it!"
+	"\"Insufficient funds.\"",
+	"\"I am too scared.\"",
+	"\"Maybe tomorrow will be different.\"",
+	"\"But how?\"",
+	"\"The loop is not so bad.\"",
+	"\"I am not brave enough.\"",
+	"\"I am safe in the loop.\"",
+	"\"I don't want to!\"",
+	"\"I will do it whey you do it!\""
 ]
 var rand = RandomNumberGenerator.new()
 

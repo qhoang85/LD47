@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://graphics/ending_robber.png" type="Texture" id=1]
 [ext_resource path="res://graphics/ending_judge.png" type="Texture" id=2]
 [ext_resource path="res://graphics/ending_doctor.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ending.gd" type="Script" id=4]
 [ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=5]
+[ext_resource path="res://prefabs/next_indicator.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -115,10 +116,13 @@ your appendix
 burst. You paid
 $89 500 in medical
 bills."
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite3" parent="ending_doctor" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 224, 76 )
 
 [node name="ending_robber" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -134,10 +138,13 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "On your way home,
 you got robbed.
 You lost $89 500."
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite2" parent="ending_robber" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 312, 50 )
 
 [node name="ending_judge" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -154,12 +161,16 @@ text = "On your way home,
 your wife filed
 for divorce. She
 got $89 500."
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" parent="ending_judge" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 272, 64 )
+
 [node name="Buttons" type="VBoxContainer" parent="."]
+visible = false
 margin_left = 192.0
 margin_top = 88.0
 margin_right = 272.0

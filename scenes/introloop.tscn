@@ -59,7 +59,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 294, 108 )
+visible = false
+position = Vector2( 308, 108 )
 rotation = 1.5708
 texture = ExtResource( 3 )
 hframes = 2
@@ -72,16 +73,17 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 28.0
+margin_left = 20.0
 margin_top = 67.0
-margin_right = 292.0
+margin_right = 300.0
 margin_bottom = 112.0
 custom_fonts/font = ExtResource( 2 )
 text = "\"How many days has it been?\"
 
 \"How many more days until
-I can retire early... or ESCAPE?\""
+I can break the loop... or ESCAPE?\""
 align = 1
+percent_visible = 0.31
 __meta__ = {
 "_edit_use_anchors_": false
 }

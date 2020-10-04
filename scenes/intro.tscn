@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 248, 108 )
+position = Vector2( 252, 108 )
 rotation = 1.5708
 texture = ExtResource( 3 )
 hframes = 2
@@ -82,9 +82,9 @@ custom_fonts/font = ExtResource( 2 )
 text = "\"How many days has it been?\"
 
 \"How many more days until
-I can retire early?\""
+I can break the loop?\""
 align = 1
-percent_visible = 0.38
+percent_visible = 0.793333
 __meta__ = {
 "_edit_use_anchors_": false
 }

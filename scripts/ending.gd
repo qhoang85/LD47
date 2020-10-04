@@ -47,16 +47,7 @@ func _unhandled_input(_event):
 		if Input.is_action_just_pressed("ui_cancel"):
 			get_tree().quit()
 
-
-func set_buttons_visible():
-	buttons.visible = true
-	home_button.grab_focus()
-	$Timer.start()
-	sfx.play("click", 1, -5)
-
-
-func _on_Home_pressed():
-	if $Timer.is_stopped():
+	if not animation_player.is_playing():
 		player_stats.funds += -89
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
@@ -65,13 +56,37 @@ func _on_Home_pressed():
 		get_tree().change_scene("res://scenes/garage_back.tscn")
 
 
-func _on_Home_focus_entered():
-	home_button.set_text("-go home-")
+func set_buttons_visible():
+	match end_mode:
+		ending.DOCTOR:
+			$ending_doctor/Sprite3.visible = true
+		ending.ROBBER:
+			$ending_robber/Sprite2.visible = true
+		ending.JUDGE:
+			$ending_judge/Sprite.visible = true
+#	buttons.visible = true
+#	home_button.grab_focus()
+#	$Timer.start()
+#	sfx.play("click", 1, -5)
 
 
-func _on_Home_focus_exited():
-	home_button.set_text("go home")
-	sfx.play("click", 1, -5)
+#func _on_Home_pressed():
+#	if $Timer.is_stopped():
+#		player_stats.funds += -89
+#		scene_transition.right_in()
+#		yield(scene_transition.animation_player, "animation_finished")
+#		scene_transition.right_out()
+## warning-ignore:return_value_discarded
+#		get_tree().change_scene("res://scenes/garage_back.tscn")
+
+
+#func _on_Home_focus_entered():
+#	home_button.set_text("-go home-")
+#
+#
+#func _on_Home_focus_exited():
+#	home_button.set_text("go home")
+#	sfx.play("click", 1, -5)
 
 
 #func _on_Quit_pressed():
