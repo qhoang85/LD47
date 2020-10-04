@@ -12,9 +12,6 @@ extents = Vector2( 17.0823, 6.85994 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 120, 16 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -39,29 +36,10 @@ tile_data = PoolIntArray( 3, 10, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65540
 position = Vector2( 40.8622, 116.853 )
 
 [node name="DroneDrink" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 9.28937, 108.845 )
-scale = Vector2( -1, 1 )
-
-[node name="Sprite" parent="TileMap/SpriteMap/DroneDrink" index="1"]
-frame = 0
+position = Vector2( 24, 64 )
 
 [node name="DroneDrink2" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 68.744, 103.479 )
-scale = Vector2( -1, 1 )
-
-[node name="DroneDrink3" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 20.2359, 77.5082 )
-
-[node name="DroneDrink4" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 65.5245, 58.62 )
-scale = Vector2( -1, 1 )
-
-[node name="DroneDrink5" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 19.592, 54.3273 )
-
-[node name="DroneDrink6" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 42.7729, 87.5961 )
-scale = Vector2( -1, 1 )
+position = Vector2( 56, 72 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -80,15 +58,3 @@ scene_path = "res://scenes/office.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitioner"]
 shape = SubResource( 1 )
 [connection signal="body_entered" from="SceneTransitioner" to="SceneTransitioner" method="_on_body_entered"]
-
-[editable path="TileMap/SpriteMap/DroneDrink"]
-
-[editable path="TileMap/SpriteMap/DroneDrink2"]
-
-[editable path="TileMap/SpriteMap/DroneDrink3"]
-
-[editable path="TileMap/SpriteMap/DroneDrink4"]
-
-[editable path="TileMap/SpriteMap/DroneDrink5"]
-
-[editable path="TileMap/SpriteMap/DroneDrink6"]

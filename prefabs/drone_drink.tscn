@@ -9,7 +9,7 @@ extents = Vector2( 3.902, 1.74788 )
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../DroneDrink/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,10 @@ tracks/0/keys = {
 }
 
 [node name="DroneDrink" type="StaticBody2D"]
-position = Vector2( 1.5, -10 )
+position = Vector2( 56, 40 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 9 )
