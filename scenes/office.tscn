@@ -10,6 +10,7 @@
 extents = Vector2( 27.9615, 10 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 50, 30 )
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -27,7 +28,7 @@ format = 1
 tile_data = PoolIntArray( 0, 11, 0, 1, 14, 0, 9, 13, 0, 10, 14, 0, 13, 14, 0, 65548, 7, 0, 131073, 4, 0, 196608, 13, 0, 196617, 13, 0, 196618, 12, 0, 196620, 13, 0, 262145, 6, 0, 262157, 8, 0 )
 
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 104.644, 91.886 )
+position = Vector2( 10.9014, 26.3456 )
 
 [node name="Drone" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 16.381, 68.644 )

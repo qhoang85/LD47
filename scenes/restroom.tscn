@@ -34,10 +34,10 @@ format = 1
 tile_data = PoolIntArray( 131072, 19, 0, 131073, 9, 0, 131074, 19, 0 )
 
 [node name="Player" parent="SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 42, 45 )
+position = Vector2( 7, 60 )
 
 [node name="Reflection" parent="SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 42, 30 )
+position = Vector2( 7, 15 )
 is_reflection = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

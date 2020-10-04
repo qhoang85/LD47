@@ -33,7 +33,7 @@ format = 1
 tile_data = PoolIntArray( 3, 10, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65540, 9, 0 )
 
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 40.8622, 116.853 )
+position = Vector2( 54.1698, 27.5636 )
 
 [node name="DroneDrink3" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
 position = Vector2( 3.06491, 116.143 )

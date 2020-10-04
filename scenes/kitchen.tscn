@@ -27,7 +27,7 @@ format = 1
 tile_data = PoolIntArray( -131072, 20, 0, -131069, 10, 0, -65535, 9, 0, -65534, 9, 0 )
 
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
-position = Vector2( 34.872, 50.568 )
+position = Vector2( 53.4036, -7.4652 )
 
 [node name="SceneTransitioner" type="Area2D" parent="TileMap"]
 position = Vector2( 32.16, 80.049 )
