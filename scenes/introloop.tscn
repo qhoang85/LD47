@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 3, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.35, 0.35, 1.0 ]
+"values": [ 0.0, 0.3, 0.3, 1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:visible")
@@ -59,12 +59,10 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( 248, 108 )
+position = Vector2( 294, 108 )
 rotation = 1.5708
 texture = ExtResource( 3 )
 hframes = 2
-frame = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -84,7 +82,6 @@ text = "How many days has it been?
 How many more days until
 I can retire early... or ESCAPE?"
 align = 1
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

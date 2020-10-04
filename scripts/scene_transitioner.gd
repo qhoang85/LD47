@@ -10,6 +10,13 @@ func _on_body_entered(body):
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
 		get_tree().change_scene("res://scenes/breakloop.tscn")
+	elif get_parent().is_in_group("kitchen"):
+		player_stats.work_time = 30
+		player_stats.hours = 8
+		scene_transition.right_in()
+		yield(scene_transition.animation_player, "animation_finished")
+		scene_transition.right_out()
+		get_tree().change_scene("res://scenes/office.tscn")
 	else:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")

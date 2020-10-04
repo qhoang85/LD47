@@ -11,5 +11,6 @@ one_shot = true
 
 [node name="minute_timer" type="Timer" parent="."]
 wait_time = 3.75
+one_shot = true
 [connection signal="timeout" from="work_timer" to="." method="_on_work_timer_timeout"]
 [connection signal="timeout" from="minute_timer" to="." method="_on_minute_timer_timeout"]

@@ -10,28 +10,26 @@ var hours = 8
 var has_looped = false
 
 
+func _process(delta):
+	print(hours)
+
 func reset_stats():
-	funds = 156
-	goal = 500
 	work_time = 30
 	hours = 8
-	has_looped = false
-
-
-func start_work_time():
-	timer.start()
-	minute_timer.start()
 
 
 func _on_minute_timer_timeout():
+	hours -= 1
 	if hours == 0:
 		minute_timer.stop()
 	else:
-		hours -= 1
+		minute_timer.start(3.75)
 		signals.emit_signal("update_work_time")
 
 
 func _on_work_timer_timeout():
+	hours = 8
+	minute_timer.stop()
 	scene_transition.right_in()
 	yield(scene_transition.animation_player, "animation_finished")
 	scene_transition.right_out()
