@@ -1,19 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=3]
 [ext_resource path="res://ui/ui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=5]
+[ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.0823, 6.85994 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 120, 56 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -54,4 +52,35 @@ scene_path = "res://scenes/restroom.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitioner"]
 shape = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = -16.0
+margin_top = 88.0
+margin_right = 92.0
+margin_bottom = 109.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+text = "Move:
+Confirm:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+margin_left = 68.0
+margin_right = 108.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+text = "WASD
+Enter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="SceneTransitioner" to="SceneTransitioner" method="_on_body_entered"]

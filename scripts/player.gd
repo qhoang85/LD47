@@ -27,6 +27,9 @@ func _unhandled_input(_event):
 # warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
+	else:
+		if Input.is_action_just_pressed("ui_cancel"):
+			get_tree().quit()
 
 
 func _physics_process(delta):
