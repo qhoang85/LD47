@@ -2,6 +2,7 @@ extends ColorRect
 
 
 var doubt = false
+var escape_activated = false
 
 onready var yes_button = $CenterContainer/VBoxContainer/HBoxContainer/Yes
 onready var no_button = $CenterContainer/VBoxContainer/HBoxContainer/No
@@ -33,6 +34,7 @@ func _ready():
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if player_stats.has_looped:
+			escape_activated = true
 			scene_transition.right_in()
 			yield(scene_transition.animation_player, "animation_finished")
 			scene_transition.right_out()
@@ -42,7 +44,7 @@ func _unhandled_input(_event):
 		else:
 			if Input.is_action_just_pressed("ui_cancel"):
 				get_tree().change_scene("res://scenes/escape_quit.tscn")
-	elif doubt:
+	elif doubt and not escape_activated:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
