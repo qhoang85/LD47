@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=2]
+[ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=3]
+[ext_resource path="res://ui/ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://graphics/tileset.tres" type="TileSet" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.7364, 3.4751 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="Node2D" parent="."]
+position = Vector2( 120, 56 )
+
+[node name="TileMap" type="TileMap" parent="TileMap"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 262146, 6, 0, 262147, 6, 0 )
+
+[node name="SpriteMap" type="TileMap" parent="TileMap"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_y_sort = true
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 2, 21, 0 )
+
+[node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 1 )]
+position = Vector2( 45.8457, 47.5733 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 120, 56 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, -8, 88, -8, 88, 72, 72, 72, 72, 88, 24, 88, 24, 72, -8, 72, -8, -8, 0, 0, 0, 64, 32, 64, 32, 80, 64, 80, 64, 64, 80, 64, 80, 0, 0, 0 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="SceneTransitioner" type="Area2D" parent="."]
+position = Vector2( 168.001, 135.3 )
+script = ExtResource( 2 )
+scene_path = "res://scenes/loop.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitioner"]
+position = Vector2( -8.0941, -57.558 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="SceneTransitioner" to="SceneTransitioner" method="_on_body_entered"]
