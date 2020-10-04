@@ -7,7 +7,7 @@ var _input : Vector2
 var _look_dir = 1.0
 var _is_using = false
 export(bool) var is_reflection = false
-var _is_showering = -1
+var _is_showering = 0
 
 
 func _ready():
