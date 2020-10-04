@@ -161,7 +161,6 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="."]
-visible = false
 margin_left = 192.0
 margin_top = 88.0
 margin_right = 272.0
@@ -184,20 +183,6 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "go home"
 flat = true
 
-[node name="Quit" type="Button" parent="Buttons"]
-margin_top = 19.0
-margin_right = 80.0
-margin_bottom = 34.0
-focus_neighbour_top = NodePath("../Home")
-focus_neighbour_bottom = NodePath("../Home")
-custom_styles/focus = SubResource( 1 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "quit"
-flat = true
-
 [node name="End" parent="." instance=ExtResource( 6 )]
 visible = false
 
@@ -211,6 +196,3 @@ one_shot = true
 [connection signal="focus_entered" from="Buttons/Home" to="." method="_on_Home_focus_entered"]
 [connection signal="focus_exited" from="Buttons/Home" to="." method="_on_Home_focus_exited"]
 [connection signal="pressed" from="Buttons/Home" to="." method="_on_Home_pressed"]
-[connection signal="focus_entered" from="Buttons/Quit" to="." method="_on_Quit_focus_entered"]
-[connection signal="focus_exited" from="Buttons/Quit" to="." method="_on_Quit_focus_exited"]
-[connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]
