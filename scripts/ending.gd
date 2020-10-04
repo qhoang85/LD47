@@ -61,18 +61,18 @@ func _on_Home_focus_exited():
 	sfx.play("click", 1, -5)
 
 
-func _on_Quit_pressed():
-	if $Timer.is_stopped():
-		quit_button.release_focus()
-		end.visible = true
-		end.animation_player.play("Animate")
-		music.stop_music()
-
-
-func _on_Quit_focus_entered():
-	quit_button.set_text("-quit-")
-
-
-func _on_Quit_focus_exited():
-	quit_button.set_text("quit")
-	sfx.play("click", 1, -5)
+#func _on_Quit_pressed():
+#	if $Timer.is_stopped():
+#		quit_button.release_focus()
+#		end.visible = true
+#		end.animation_player.play("Animate")
+#		music.stop_music()
+#
+#
+#func _on_Quit_focus_entered():
+#	quit_button.set_text("-quit-")
+#
+#
+#func _on_Quit_focus_exited():
+#	quit_button.set_text("quit")
+#	sfx.play("click", 1, -5)
