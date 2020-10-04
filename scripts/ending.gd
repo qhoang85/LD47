@@ -46,6 +46,7 @@ func set_buttons_visible():
 
 func _on_Home_pressed():
 	if $Timer.is_stopped():
+		player_stats.funds += -89
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
