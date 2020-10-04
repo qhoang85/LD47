@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=2]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/car.tscn" type="PackedScene" id=4]
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=5]
+[ext_resource path="res://ui/ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://utils/garage_collision.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.4961, 6.13889 )
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 113.713, 25.711 )
+position = Vector2( 112, 24 )
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -18,7 +20,7 @@ position = Vector2( 113.713, 25.711 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65534, 7, 0, -65533, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 7, 0, 65539, 7, 0, 65540, 7, 0, 65541, 7, 0, 131072, 7, 0, 131073, 7, 0, 131074, 7, 0, 131075, 7, 0, 131076, 7, 0, 131077, 7, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 262144, 7, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 262148, 7, 0, 262149, 7, 0, 327680, 7, 0, 327681, 7, 0, 327682, 7, 0, 327683, 7, 0, 327684, 7, 0, 327685, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 458752, 7, 0, 458753, 7, 0, 458754, 7, 0, 458755, 7, 0, 458756, 7, 0, 458757, 7, 0, 524289, 7, 0, 524290, 7, 0, 524291, 7, 0, 524292, 7, 0 )
+tile_data = PoolIntArray( -65534, 7, 0, -65533, 7, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 65536, 7, 0, 65537, 7, 0, 65538, 7, 0, 65539, 7, 0, 65540, 7, 0, 65541, 7, 0, 131072, 7, 0, 131073, 7, 0, 131074, 7, 0, 131075, 7, 0, 131076, 7, 0, 131077, 7, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0, 262144, 7, 0, 262145, 7, 0, 262146, 7, 0, 262147, 7, 0, 262148, 7, 0, 262149, 7, 0, 327680, 7, 0, 327681, 7, 0, 327682, 7, 0, 327683, 7, 0, 327684, 7, 0, 327685, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 458752, 7, 0, 458753, 7, 0, 458754, 7, 0, 458755, 7, 0, 458756, 7, 0, 458757, 7, 0 )
 
 [node name="SpriteMap" type="TileMap" parent="TileMap"]
 tile_set = ExtResource( 5 )
@@ -41,4 +43,11 @@ scene_path = "res://scenes/office.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/SceneTransitioner"]
 position = Vector2( 48.502, 82.788 )
 shape = SubResource( 1 )
+
+[node name="UI" parent="." instance=ExtResource( 6 )]
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( -112, -24 )
+collision_layer = 2
+collision_mask = 0
 [connection signal="body_entered" from="TileMap/SceneTransitioner" to="TileMap/SceneTransitioner" method="_on_body_entered"]

@@ -62,7 +62,7 @@ func _on_Home_pressed():
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
 # warning-ignore:return_value_discarded
-		get_tree().change_scene("res://scenes/bedroom_night.tscn")
+		get_tree().change_scene("res://scenes/garage_back.tscn")
 
 
 func _on_Home_focus_entered():
