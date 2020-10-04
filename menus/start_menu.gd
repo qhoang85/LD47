@@ -22,7 +22,10 @@ func _ready():
 func _on_Start_pressed():
 	player_stats.reset_stats()
 	sfx.play("click", 1, -5)
-	get_tree().change_scene("res://scenes/bedroom.tscn")
+	scene_transition.right_in()
+	yield(scene_transition.animation_player, "animation_finished")
+	scene_transition.right_out()
+	get_tree().change_scene("res://scenes/intro.tscn")
 
 
 func _on_HowTo_pressed():

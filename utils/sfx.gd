@@ -5,6 +5,7 @@ var sounds_path = "res://audio/sfx/"
 var sounds = {
 	"bullet" : load(sounds_path + "bullet.wav"),
 	"explosion" : load(sounds_path + "explosion.wav"),
+	"chill" : load(sounds_path + "chill.wav"),
 	"click" : load(sounds_path + "click.wav"),
 	"hurt" : load(sounds_path + "hurt.wav"),
 	"melee" : load(sounds_path + "melee.wav"),

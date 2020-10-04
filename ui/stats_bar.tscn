@@ -23,9 +23,9 @@ __meta__ = {
 [node name="Day" type="Label" parent="Day"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 4.0
+margin_top = 3.0
 custom_fonts/font = ExtResource( 1 )
-text = "DAY:?"
+text = "DAY ???"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,7 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 3.0
 custom_fonts/font = ExtResource( 1 )
-text = "$100000/100000"
+text = "RETIREMENT FUND: $156K / $500K"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

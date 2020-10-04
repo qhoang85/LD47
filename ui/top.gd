@@ -5,7 +5,8 @@ onready var funds = $Funds/Funds
 
 
 func _ready():
-	update_stats_bar()
+#	update_stats_bar()
+	pass
 
 
 func update_stats_bar():
