@@ -37,7 +37,7 @@ collision_mask = 3
 position = Vector2( 32.16, 80.049 )
 collision_layer = 0
 script = ExtResource( 1 )
-scene_path = "res://scenes/office.tscn"
+scene_path = "res://scenes/garage_leave.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/SceneTransitioner"]
 shape = SubResource( 1 )
