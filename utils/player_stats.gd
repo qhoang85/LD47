@@ -22,6 +22,7 @@ func _on_minute_timer_timeout():
 func _on_work_timer_timeout():
 	hours = 8
 	minute_timer.stop()
+	signals.emit_signal("update_work_time")
 	scene_transition.right_in()
 	yield(scene_transition.animation_player, "animation_finished")
 	scene_transition.right_out()
