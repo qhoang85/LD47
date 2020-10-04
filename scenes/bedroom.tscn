@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=3]
 [ext_resource path="res://ui/ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.0823, 6.85994 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 120, 56 )
@@ -19,7 +23,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 262146, 0, 0, 262147, 0, 0 )
 
 [node name="SpriteMap" type="TileMap" parent="TileMap"]
 tile_set = ExtResource( 3 )
@@ -31,7 +35,7 @@ format = 1
 tile_data = PoolIntArray( 2, 0, 0 )
 
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 2 )]
-position = Vector2( 39.9058, 53.0256 )
+position = Vector2( 40, 11 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -41,3 +45,12 @@ collision_mask = 0
 polygon = PoolVector2Array( -8, 64, -8, 72, 88, 72, 88, -8, -8, -8, -8, 0, 80, 0, 80, 64, 0, 64, 0, 0, -8, 0 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="SceneTransitioner" type="Area2D" parent="."]
+position = Vector2( 48.001, 79.3 )
+script = ExtResource( 5 )
+scene_path = "res://scenes/restroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitioner"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="SceneTransitioner" to="SceneTransitioner" method="_on_body_entered"]
