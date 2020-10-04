@@ -29,6 +29,7 @@ config/icon="res://icon.png"
 player_stats="*res://player_stats.gd"
 music="*res://utils/music.tscn"
 sfx="*res://utils/sfx.tscn"
+signals="*res://utils/signals.gd"
 
 [display]
 

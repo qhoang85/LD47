@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chill.wav-edabd0582ff905e45ec646dcfca9c69a.sample"
+
+[deps]
+
+source_file="res://audio/sfx/chill.wav"
+dest_files=[ "res://.import/chill.wav-edabd0582ff905e45ec646dcfca9c69a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,12 +1,106 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://graphics/ending_robber.png" type="Texture" id=1]
 [ext_resource path="res://graphics/ending_judge.png" type="Texture" id=2]
 [ext_resource path="res://graphics/ending_doctor.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ending.gd" type="Script" id=4]
 [ext_resource path="res://utils/PressStart2P.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/quit.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Animation" id=4]
+resource_name = "doctor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ending_doctor/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_buttons_visible"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "judge"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ending_judge/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_buttons_visible"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "quit"
+
+[sub_resource type="Animation" id=3]
+resource_name = "robber"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ending_robber/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_buttons_visible"
+} ]
+}
 
 [node name="Ending" type="Node2D"]
 script = ExtResource( 4 )
@@ -18,8 +112,8 @@ centered = false
 [node name="Label" type="Label" parent="ending_doctor"]
 margin_left = 168.0
 margin_top = 24.0
-margin_right = 304.0
-margin_bottom = 69.0
+margin_right = 312.0
+margin_bottom = 81.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "On your way home,
@@ -27,11 +121,13 @@ your appendix
 burst. You paid
 $89 500 in medical
 bills."
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ending_robber" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 centered = false
 
@@ -50,6 +146,7 @@ __meta__ = {
 }
 
 [node name="ending_judge" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 2 )
 centered = false
 
@@ -69,32 +166,55 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="VBoxContainer" parent="."]
-margin_left = 224.0
+visible = false
+margin_left = 192.0
 margin_top = 88.0
-margin_right = 304.0
+margin_right = 272.0
 margin_bottom = 168.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Home" type="Button" parent="CenterContainer"]
 margin_right = 80.0
 margin_bottom = 15.0
+focus_neighbour_top = NodePath("../Quit")
+focus_neighbour_bottom = NodePath("../Quit")
 custom_styles/focus = SubResource( 1 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "GO HOME"
+text = "go home"
 flat = true
 
 [node name="Quit" type="Button" parent="CenterContainer"]
 margin_top = 19.0
 margin_right = 80.0
 margin_bottom = 34.0
+focus_neighbour_top = NodePath("../Home")
+focus_neighbour_bottom = NodePath("../Home")
 custom_styles/focus = SubResource( 1 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "QUIT"
+text = "quit"
 flat = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="End" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "doctor"
+anims/doctor = SubResource( 4 )
+anims/judge = SubResource( 2 )
+anims/quit = SubResource( 5 )
+anims/robber = SubResource( 3 )
+[connection signal="focus_entered" from="CenterContainer/Home" to="." method="_on_Home_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/Home" to="." method="_on_Home_focus_exited"]
+[connection signal="pressed" from="CenterContainer/Home" to="." method="_on_Home_pressed"]
+[connection signal="focus_entered" from="CenterContainer/Quit" to="." method="_on_Quit_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/Quit" to="." method="_on_Quit_focus_exited"]
+[connection signal="pressed" from="CenterContainer/Quit" to="." method="_on_Quit_pressed"]
