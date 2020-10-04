@@ -150,15 +150,6 @@ text = "credits"
 flat = true
 align = 0
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 76.0
-margin_right = 100.0
-margin_bottom = 85.0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "#LD47"
-align = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Animate"
 playback_speed = 0.25
@@ -388,6 +379,19 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "-back-"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 272.0
+margin_top = 168.0
+margin_right = 316.0
+margin_bottom = 177.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "#LD47"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
