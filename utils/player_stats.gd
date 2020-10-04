@@ -7,6 +7,7 @@ var funds = 156
 var goal = 500
 var work_time = 30
 var hours = 8
+var has_looped = false
 
 
 func reset_stats():
@@ -14,6 +15,7 @@ func reset_stats():
 	goal = 500
 	work_time = 30
 	hours = 8
+	has_looped = false
 
 
 func start_work_time():

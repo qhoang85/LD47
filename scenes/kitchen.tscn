@@ -29,6 +29,7 @@ tile_data = PoolIntArray( -131072, 20, 0, -131069, 10, 0, -65535, 9, 0, -65534, 
 
 [node name="PlayerDrink" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 53.404, -0.317 )
+collision_mask = 3
 
 [node name="SceneTransitioner" type="Area2D" parent="TileMap"]
 position = Vector2( 32.16, 80.049 )
