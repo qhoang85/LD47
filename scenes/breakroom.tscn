@@ -35,11 +35,34 @@ tile_data = PoolIntArray( 3, 10, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65540
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
 position = Vector2( 40.8622, 116.853 )
 
-[node name="DroneDrink" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 24, 64 )
+[node name="DroneDrink3" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 3.06491, 116.143 )
+scale = Vector2( -1, 1 )
 
-[node name="DroneDrink2" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
-position = Vector2( 56, 72 )
+[node name="DroneDrink4" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 70.2466, 104.767 )
+scale = Vector2( -1, 1 )
+
+[node name="DroneDrink5" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 57.7975, 97.0402 )
+
+[node name="DroneDrink6" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 29.4654, 38.8733 )
+scale = Vector2( -1, 1 )
+
+[node name="DroneDrink7" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 56.939, 72.5715 )
+
+[node name="DroneDrink8" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 72.1783, 69.7812 )
+scale = Vector2( -1, 1 )
+
+[node name="DroneDrink9" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 27.319, 55.1858 )
+scale = Vector2( -1, 1 )
+
+[node name="DroneDrink10" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
+position = Vector2( 10.148, 44.2393 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
