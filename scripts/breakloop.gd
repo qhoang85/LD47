@@ -15,7 +15,7 @@ var messages = [
 	"\"I am not brave enough.\"",
 	"\"I am safe in the loop.\"",
 	"\"I don't want to!\"",
-	"\"I will do it whey you do it!\""
+	"\"I will do it when you do it!\""
 ]
 var rand = RandomNumberGenerator.new()
 
