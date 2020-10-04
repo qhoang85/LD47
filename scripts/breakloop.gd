@@ -22,6 +22,7 @@ var rand = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player_stats.has_looped = true
 	yes_button.grab_focus()
 	$Sprite.visible = false
 	$Message/Label2.visible = false
@@ -30,24 +31,43 @@ func _ready():
 
 
 func _unhandled_input(_event):
-	if player_stats.has_looped:
-		if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel"):
+		if player_stats.has_looped:
 			scene_transition.right_in()
 			yield(scene_transition.animation_player, "animation_finished")
 			scene_transition.right_out()
 # warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
-	else:
-		if Input.is_action_just_pressed("ui_cancel"):
-			get_tree().quit()
-	if doubt:
+		else:
+			if Input.is_action_just_pressed("ui_cancel"):
+				get_tree().quit()
+	elif doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/introloop.tscn")
-		player_stats.has_looped = true
+
+
+#	if player_stats.has_looped:
+#		if Input.is_action_just_pressed("ui_cancel"):
+#			scene_transition.right_in()
+#			yield(scene_transition.animation_player, "animation_finished")
+#			scene_transition.right_out()
+## warning-ignore:return_value_discarded
+#			get_tree().change_scene("res://scenes/quit.tscn")
+#			music.stop_music()
+#	else:
+#		if Input.is_action_just_pressed("ui_cancel"):
+#			get_tree().quit()
+#	if doubt:
+#		scene_transition.right_in()
+#		yield(scene_transition.animation_player, "animation_finished")
+#		scene_transition.right_out()
+## warning-ignore:return_value_discarded
+#		get_tree().change_scene("res://scenes/introloop.tscn")
+#		player_stats.has_looped = true
 
 
 func _on_Yes_pressed():

@@ -88,7 +88,7 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_right = 132.0
+margin_right = 100.0
 margin_bottom = 15.0
 focus_neighbour_top = NodePath("../Credit")
 custom_styles/focus = SubResource( 1 )
@@ -102,7 +102,7 @@ align = 0
 
 [node name="HowTo" type="Button" parent="VBoxContainer"]
 margin_top = 19.0
-margin_right = 132.0
+margin_right = 100.0
 margin_bottom = 34.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = ExtResource( 1 )
@@ -115,7 +115,7 @@ align = 0
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 margin_top = 38.0
-margin_right = 132.0
+margin_right = 100.0
 margin_bottom = 53.0
 custom_styles/focus = SubResource( 3 )
 custom_fonts/font = ExtResource( 1 )
@@ -127,6 +127,7 @@ flat = true
 align = 0
 
 [node name="Gap" type="Control" parent="VBoxContainer"]
+visible = false
 margin_top = 57.0
 margin_right = 132.0
 margin_bottom = 67.0
@@ -136,18 +137,27 @@ __meta__ = {
 }
 
 [node name="Credit" type="Button" parent="VBoxContainer"]
-margin_top = 71.0
-margin_right = 132.0
-margin_bottom = 86.0
+margin_top = 57.0
+margin_right = 100.0
+margin_bottom = 72.0
 focus_neighbour_bottom = NodePath("../Start")
 custom_styles/focus = SubResource( 4 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Credits"
+text = "credits"
 flat = true
 align = 0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 76.0
+margin_right = 100.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "#LD47"
+align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Animate"
