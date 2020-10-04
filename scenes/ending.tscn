@@ -9,7 +9,7 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "doctor"
 length = 5.0
 tracks/0/type = "value"
@@ -39,8 +39,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "judge"
+[sub_resource type="Animation" id=3]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ending_judge/Label:percent_visible")
@@ -69,8 +68,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "robber"
+[sub_resource type="Animation" id=4]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ending_robber/Label:percent_visible")
@@ -124,7 +122,6 @@ __meta__ = {
 }
 
 [node name="ending_robber" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 1 )
 centered = false
 
@@ -144,7 +141,6 @@ __meta__ = {
 }
 
 [node name="ending_judge" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 2 )
 centered = false
 
@@ -164,7 +160,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 visible = false
 margin_left = 192.0
 margin_top = 88.0
@@ -175,7 +171,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Home" type="Button" parent="CenterContainer"]
+[node name="Home" type="Button" parent="Buttons"]
 margin_right = 80.0
 margin_bottom = 15.0
 focus_neighbour_top = NodePath("../Quit")
@@ -188,7 +184,7 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "go home"
 flat = true
 
-[node name="Quit" type="Button" parent="CenterContainer"]
+[node name="Quit" type="Button" parent="Buttons"]
 margin_top = 19.0
 margin_right = 80.0
 margin_bottom = 34.0
@@ -206,13 +202,15 @@ flat = true
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "doctor"
-anims/doctor = SubResource( 4 )
-anims/judge = SubResource( 2 )
-anims/robber = SubResource( 3 )
-[connection signal="focus_entered" from="CenterContainer/Home" to="." method="_on_Home_focus_entered"]
-[connection signal="focus_exited" from="CenterContainer/Home" to="." method="_on_Home_focus_exited"]
-[connection signal="pressed" from="CenterContainer/Home" to="." method="_on_Home_pressed"]
-[connection signal="focus_entered" from="CenterContainer/Quit" to="." method="_on_Quit_focus_entered"]
-[connection signal="focus_exited" from="CenterContainer/Quit" to="." method="_on_Quit_focus_exited"]
-[connection signal="pressed" from="CenterContainer/Quit" to="." method="_on_Quit_pressed"]
+anims/doctor = SubResource( 2 )
+anims/judge = SubResource( 3 )
+anims/robber = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="focus_entered" from="Buttons/Home" to="." method="_on_Home_focus_entered"]
+[connection signal="focus_exited" from="Buttons/Home" to="." method="_on_Home_focus_exited"]
+[connection signal="pressed" from="Buttons/Home" to="." method="_on_Home_pressed"]
+[connection signal="focus_entered" from="Buttons/Quit" to="." method="_on_Quit_focus_entered"]
+[connection signal="focus_exited" from="Buttons/Quit" to="." method="_on_Quit_focus_exited"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]

@@ -26,9 +26,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-player_stats="*res://player_stats.gd"
+player_stats="*res://utils/player_stats.gd"
 music="*res://utils/music.tscn"
 sfx="*res://utils/sfx.tscn"
+scene_transition="*res://utils/scene_transition.tscn"
 
 [display]
 
