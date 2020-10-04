@@ -25,6 +25,7 @@ func _ready():
 	yes_button.grab_focus()
 	$Sprite.visible = false
 	$Message/Label2.visible = false
+	rand.randomize()
 	$Message/Label2.text = messages[rand.randi_range(0, messages.size() - 1)]
 
 
