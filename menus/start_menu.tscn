@@ -88,7 +88,7 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 15.0
 focus_neighbour_top = NodePath("../Credit")
 custom_styles/focus = SubResource( 1 )
@@ -102,7 +102,7 @@ align = 0
 
 [node name="HowTo" type="Button" parent="VBoxContainer"]
 margin_top = 19.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 34.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = ExtResource( 1 )
@@ -115,7 +115,7 @@ align = 0
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 margin_top = 38.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 53.0
 custom_styles/focus = SubResource( 3 )
 custom_fonts/font = ExtResource( 1 )
@@ -128,7 +128,7 @@ align = 0
 
 [node name="Gap" type="Control" parent="VBoxContainer"]
 margin_top = 57.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 0, 10 )
 __meta__ = {
@@ -137,7 +137,7 @@ __meta__ = {
 
 [node name="Credit" type="Button" parent="VBoxContainer"]
 margin_top = 71.0
-margin_right = 100.0
+margin_right = 132.0
 margin_bottom = 86.0
 focus_neighbour_bottom = NodePath("../Start")
 custom_styles/focus = SubResource( 4 )
@@ -145,7 +145,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "by assface"
+text = "Credits"
 flat = true
 align = 0
 
@@ -300,6 +300,9 @@ anchor_bottom = 1.0
 margin_right = 320.0
 margin_bottom = 180.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterContainer" type="CenterContainer" parent="Credit"]
 anchor_right = 1.0
@@ -309,13 +312,13 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credit/CenterContainer"]
-margin_left = 130.0
+margin_left = 124.0
 margin_top = 59.0
-margin_right = 190.0
+margin_right = 196.0
 margin_bottom = 121.0
 
 [node name="Label" type="Label" parent="Credit/CenterContainer/VBoxContainer"]
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 9.0
 custom_fonts/font = ExtResource( 1 )
 text = "MADE BY"
@@ -326,7 +329,7 @@ __meta__ = {
 
 [node name="Gap" type="Control" parent="Credit/CenterContainer/VBoxContainer"]
 margin_top = 13.0
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 13.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -334,10 +337,10 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="Credit/CenterContainer/VBoxContainer"]
 margin_top = 17.0
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 1 )
-text = "Face"
+text = "SirJonthe"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -345,10 +348,10 @@ __meta__ = {
 
 [node name="Label3" type="Label" parent="Credit/CenterContainer/VBoxContainer"]
 margin_top = 30.0
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 39.0
 custom_fonts/font = ExtResource( 1 )
-text = "Scar"
+text = "qhoang"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -356,7 +359,7 @@ __meta__ = {
 
 [node name="Gap2" type="Control" parent="Credit/CenterContainer/VBoxContainer"]
 margin_top = 43.0
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 43.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -364,7 +367,7 @@ __meta__ = {
 
 [node name="Back" type="Button" parent="Credit/CenterContainer/VBoxContainer"]
 margin_top = 47.0
-margin_right = 60.0
+margin_right = 72.0
 margin_bottom = 62.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")

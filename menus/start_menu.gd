@@ -91,13 +91,13 @@ func _on_Quit_focus_exited():
 
 
 func _on_Credit_focus_entered():
-	credit_button.set_text("-by assface-")
+	credit_button.set_text("-credits-")
 	pointer.rotation_degrees = 23
 	background.frame = 3
 
 
 func _on_Credit_focus_exited():
-	credit_button.set_text("by assface")
+	credit_button.set_text("credits")
 	sfx.play("click", 1, -5)
 
 
