@@ -41,7 +41,7 @@ func _unhandled_input(_event):
 			music.stop_music()
 		else:
 			if Input.is_action_just_pressed("ui_cancel"):
-				get_tree().quit()
+				get_tree().change_scene("res://scenes/escape_quit.tscn")
 	elif doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
@@ -60,7 +60,7 @@ func _unhandled_input(_event):
 #			music.stop_music()
 #	else:
 #		if Input.is_action_just_pressed("ui_cancel"):
-#			get_tree().quit()
+#			get_tree().change_scene("res://scenes/escape_quit.tscn")
 #	if doubt:
 #		scene_transition.right_in()
 #		yield(scene_transition.animation_player, "animation_finished")

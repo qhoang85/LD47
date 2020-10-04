@@ -34,6 +34,8 @@ _global_script_class_icons={
 
 config/name="LD47"
 run/main_scene="res://menus/start_menu.tscn"
+boot_splash/image="res://graphics/splash.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]

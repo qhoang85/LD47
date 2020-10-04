@@ -16,7 +16,7 @@ func _ready():
 
 func _unhandled_input(_event):
 	if end_trig:
-		get_tree().quit()
+		get_tree().change_scene("res://scenes/escape_quit.tscn")
 
 
 func twist():

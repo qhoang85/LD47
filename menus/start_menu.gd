@@ -34,7 +34,7 @@ func _on_HowTo_pressed():
 
 
 func _on_Quit_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://scenes/escape_quit.tscn")
 
 
 func _on_Credit_pressed():

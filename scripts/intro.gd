@@ -20,7 +20,7 @@ func _unhandled_input(_event):
 			music.stop_music()
 	else:
 		if Input.is_action_just_pressed("ui_cancel"):
-			get_tree().quit()
+			get_tree().change_scene("res://scenes/escape_quit.tscn")
 	
 	if not animation_player.is_playing():
 		scene_transition.right_in()
