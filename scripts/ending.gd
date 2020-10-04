@@ -18,7 +18,6 @@ func _ready():
 	end_mode = ending.values()[(randi() % ending.size())]
 	buttons.visible = false
 	end.visible = false
-	music.play_song("song01")
 	
 	match end_mode:
 		ending.DOCTOR:

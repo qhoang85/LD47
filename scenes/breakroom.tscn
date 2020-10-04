@@ -10,7 +10,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.0823, 6.85994 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Work" type="Node2D" groups=[
+"work",
+]]
 position = Vector2( 120, 16 )
 
 [node name="TileMap" type="Node2D" parent="."]
@@ -75,6 +77,7 @@ polygon = PoolVector2Array( 0, 24, 80, 24, 80, 128, 48, 128, 48, 144, 16, 144, 1
 
 [node name="SceneTransitioner" type="Area2D" parent="."]
 position = Vector2( 32.17, 141.286 )
+collision_layer = 0
 script = ExtResource( 5 )
 scene_path = "res://scenes/office.tscn"
 

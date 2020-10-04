@@ -62,6 +62,7 @@ hframes = 4
 
 [node name="Letter E" type="Position2D" parent="."]
 position = Vector2( 120, 56 )
+rotation = -0.174533
 
 [node name="Letter E" type="Sprite" parent="Letter E"]
 position = Vector2( 0, 8 )

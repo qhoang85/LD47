@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=1]
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=3]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/ui.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.2932, 10 )
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 121.177, 51.402 )
+position = Vector2( 120, 50 )
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -31,9 +32,23 @@ position = Vector2( 53.4036, -7.4652 )
 
 [node name="SceneTransitioner" type="Area2D" parent="TileMap"]
 position = Vector2( 32.16, 80.049 )
+collision_layer = 0
 script = ExtResource( 1 )
 scene_path = "res://scenes/office.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/SceneTransitioner"]
 shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1, 0 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 14.823, 60.598, 14.823, 76.598, 46.823, 76.598, 46.823, 60.598, 62.823, 60.598, 62.823, 68.598, 54.823, 68.598, 54.823, 84.598, 6.823, 84.598, 6.823, 68.598, -1.177, 68.598, -1.177, 60.598 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 62.823, 68.598, 62.823, -3.402, -1.177, -3.402, -1.177, 68.598, -9.177, 68.598, -9.177, -11.402, 70.823, -11.402, 70.823, 68.598 )
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
 [connection signal="body_entered" from="TileMap/SceneTransitioner" to="TileMap/SceneTransitioner" method="_on_body_entered"]

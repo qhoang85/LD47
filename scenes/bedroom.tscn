@@ -48,6 +48,7 @@ polygon = PoolVector2Array( 0, -8, 88, -8, 88, 72, 72, 72, 72, 88, 24, 88, 24, 7
 
 [node name="SceneTransitioner" type="Area2D" parent="."]
 position = Vector2( 48.001, 79.3 )
+collision_layer = 0
 script = ExtResource( 5 )
 scene_path = "res://scenes/restroom.tscn"
 

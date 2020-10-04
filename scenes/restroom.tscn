@@ -54,6 +54,7 @@ position = Vector2( 7.38524, 60.4619 )
 
 [node name="SceneTransitioner" type="Area2D" parent="."]
 position = Vector2( 61.793, 55.758 )
+collision_layer = 0
 script = ExtResource( 6 )
 scene_path = "res://scenes/kitchen.tscn"
 
