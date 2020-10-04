@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://graphics/ending_robber.png" type="Texture" id=1]
 [ext_resource path="res://graphics/ending_judge.png" type="Texture" id=2]
@@ -69,9 +69,6 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "quit"
-
 [sub_resource type="Animation" id=3]
 resource_name = "robber"
 length = 4.0
@@ -141,6 +138,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "On your way home,
 you got robbed.
 You lost $89 500."
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -161,6 +159,7 @@ text = "On your way home,
 your wife filed
 for divorce. She
 got $89 500."
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -210,7 +209,6 @@ visible = false
 autoplay = "doctor"
 anims/doctor = SubResource( 4 )
 anims/judge = SubResource( 2 )
-anims/quit = SubResource( 5 )
 anims/robber = SubResource( 3 )
 [connection signal="focus_entered" from="CenterContainer/Home" to="." method="_on_Home_focus_entered"]
 [connection signal="focus_exited" from="CenterContainer/Home" to="." method="_on_Home_focus_exited"]
