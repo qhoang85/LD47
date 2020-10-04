@@ -2,7 +2,7 @@
 
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=1]
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/player_skate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/drone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=5]
 [ext_resource path="res://ui/ui.tscn" type="PackedScene" id=6]
@@ -28,10 +28,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 0, 11, 0, 1, 14, 0, 9, 13, 0, 10, 14, 0, 13, 14, 0, 65548, 7, 0, 131073, 4, 0, 196608, 13, 0, 196617, 13, 0, 196618, 12, 0, 196620, 13, 0, 262145, 6, 0, 262157, 8, 0 )
-
-[node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 10.9014, 26.3456 )
+tile_data = PoolIntArray( 0, 11, 0, 1, 14, 0, 9, 13, 0, 10, 14, 0, 13, 14, 0, 65548, 7, 0, 196608, 13, 0, 196617, 13, 0, 196618, 12, 0, 196620, 13, 0, 262145, 6, 0, 262157, 8, 0 )
 
 [node name="Drone" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 16.381, 68.644 )
@@ -47,6 +44,9 @@ position = Vector2( 208.952, 21.1681 )
 
 [node name="Drone5" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 160.442, 20.0863 )
+
+[node name="PlayerSkate" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
+position = Vector2( 16.179, 27.655 )
 
 [node name="SceneTransitioner" type="Area2D" parent="."]
 collision_layer = 0

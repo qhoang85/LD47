@@ -92,3 +92,8 @@ func take_shower():
 func finish_shower():
 	self._is_showering = self._is_showering - 1
 	print("exit shower")
+
+
+func play_skate_sound():
+	if !self.is_reflection:
+		sfx.play("skate")
