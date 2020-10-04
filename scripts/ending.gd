@@ -49,7 +49,7 @@ func _on_Home_pressed():
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
-		get_tree().change_scene("res://scenes/intro.tscn")
+		get_tree().change_scene("res://scenes/bedroom_night.tscn")
 
 
 func _on_Home_focus_entered():
