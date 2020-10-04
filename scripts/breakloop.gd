@@ -22,6 +22,7 @@ func _unhandled_input(_event):
 			scene_transition.right_out()
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
+			
 	elif doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
