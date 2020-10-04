@@ -5,7 +5,6 @@ var end_mode
 
 onready var buttons = $Buttons
 onready var home_button = $Buttons/Home
-onready var quit_button = $Buttons/Quit
 onready var doctor = $ending_doctor
 onready var robber = $ending_robber
 onready var judge = $ending_judge

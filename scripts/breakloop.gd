@@ -23,6 +23,7 @@ var rand = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yes_button.grab_focus()
+	$Sprite.visible = false
 	$Message/Label2.visible = false
 	$Message/Label2.text = messages[rand.randi_range(0, messages.size() - 1)]
 
@@ -35,7 +36,7 @@ func _unhandled_input(_event):
 			scene_transition.right_out()
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
-	elif doubt:
+	if doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
@@ -47,6 +48,7 @@ func _on_Yes_pressed():
 	yes_button.release_focus()
 	animation_player.play("animate")
 	yield(animation_player, "animation_finished")
+	$Sprite.visible = true
 	doubt = true
 
 

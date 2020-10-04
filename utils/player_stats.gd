@@ -10,14 +10,6 @@ var hours = 8
 var has_looped = false
 
 
-func _process(delta):
-	print(hours)
-
-func reset_stats():
-	work_time = 30
-	hours = 8
-
-
 func _on_minute_timer_timeout():
 	hours -= 1
 	if hours == 0:

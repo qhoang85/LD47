@@ -20,7 +20,6 @@ func _ready():
 
 
 func _on_Start_pressed():
-	player_stats.reset_stats()
 	sfx.play("click", 1, -5)
 	scene_transition.right_in()
 	yield(scene_transition.animation_player, "animation_finished")
