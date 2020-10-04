@@ -96,12 +96,10 @@ func play_shower_sound():
 
 func take_shower():
 	self._is_showering = self._is_showering + 1
-	print("enter shower")
 	
 	
 func finish_shower():
 	self._is_showering = self._is_showering - 1
-	print("exit shower")
 
 
 func play_skate_sound():
