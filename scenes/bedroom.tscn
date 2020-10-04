@@ -42,7 +42,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -8, 64, -8, 72, 88, 72, 88, -8, -8, -8, -8, 0, 80, 0, 80, 64, 0, 64, 0, 0, -8, 0 )
+polygon = PoolVector2Array( 0, -8, 88, -8, 88, 72, 72, 72, 72, 88, 24, 88, 24, 72, -8, 72, -8, -8, 0, 0, 0, 64, 32, 64, 32, 80, 64, 80, 64, 64, 80, 64, 80, 0, 0, 0 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 

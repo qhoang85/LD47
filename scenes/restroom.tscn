@@ -43,7 +43,7 @@ is_reflection = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 56, -10, 56, 86, -8, 86, -8, -10, 48, -10, 48, -2, 0, -2, 0, 78, 48, 78, 48, -10 )
+polygon = PoolVector2Array( 48, 0, 48, 48, 64, 48, 64, 64, 48, 64, 48, 80, 0, 80, 0, 0, 48, 0, 48, -8, -8, -8, -8, 88, 56, 88, 56, 72, 72, 72, 72, 40, 56, 40, 56, -8, 48, -8 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
