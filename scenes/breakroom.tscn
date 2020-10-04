@@ -2,7 +2,7 @@
 
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=1]
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/player_drink.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/ui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=5]
 [ext_resource path="res://prefabs/drone_drink.tscn" type="PackedScene" id=6]
@@ -34,9 +34,6 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 3, 10, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65540, 9, 0 )
 
-[node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 54.1698, 27.5636 )
-
 [node name="DroneDrink3" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
 position = Vector2( 3.06491, 116.143 )
 scale = Vector2( -1, 1 )
@@ -65,6 +62,9 @@ scale = Vector2( -1, 1 )
 
 [node name="DroneDrink10" parent="TileMap/SpriteMap" instance=ExtResource( 6 )]
 position = Vector2( 10.148, 44.2393 )
+
+[node name="PlayerDrink" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
+position = Vector2( 55.569, 34.104 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
