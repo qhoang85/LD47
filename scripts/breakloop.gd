@@ -24,6 +24,7 @@ var rand = RandomNumberGenerator.new()
 func _ready():
 	yes_button.grab_focus()
 	$Message/Label2.visible = false
+	rand.randomize()
 	$Message/Label2.text = messages[rand.randi_range(0, messages.size() - 1)]
 
 
