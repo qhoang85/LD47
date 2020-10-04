@@ -18,6 +18,7 @@ func _ready():
 	end_mode = ending.values()[(randi() % ending.size())]
 	buttons.visible = false
 	end.visible = false
+	music.play_song("song01")
 	
 	match end_mode:
 		ending.DOCTOR:
@@ -63,6 +64,7 @@ func _on_Quit_pressed():
 		quit_button.release_focus()
 		end.visible = true
 		end.animation_player.play("Animate")
+		music.stop_music()
 
 
 func _on_Quit_focus_entered():

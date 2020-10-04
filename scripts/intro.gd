@@ -1,9 +1,7 @@
-extends Node2D
+extends ColorRect
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var animation_player =$AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _unhandled_input(_event):
+	if not animation_player.is_playing():
+		scene_transition.right_in()
+		yield(scene_transition.animation_player, "animation_finished")
+		scene_transition.right_out()
+		get_tree().change_scene("res://scenes/bedroom.tscn")
