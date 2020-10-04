@@ -5,16 +5,17 @@ onready var funds = $Funds/Funds
 
 
 func _ready():
+	update_stats_bar()
 	signals.connect("update_work_time", self, "on_update_work_time")
 	if get_parent().get_parent().is_in_group("work"):
 		$Hour/Day.visible = false
 		work_time.visible = true
 		if player_stats.timer.is_stopped():
-			player_stats.start_work_time()
+			player_stats.timer.start(30)
+			player_stats.minute_timer.start(3.75)
 	else:
 		$Hour/Day.visible = true
 		work_time.visible = false
-	update_stats_bar()
 
 
 func update_stats_bar():

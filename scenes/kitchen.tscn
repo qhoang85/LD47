@@ -9,7 +9,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.2932, 10 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=[
+"kitchen",
+]]
 position = Vector2( 120, 50 )
 
 [node name="TileMap" type="Node2D" parent="."]
