@@ -22,7 +22,7 @@ tracks/0/keys = {
 }
 
 [node name="DroneDrink" type="StaticBody2D"]
-position = Vector2( 56, 40 )
+position = Vector2( 1.5, -10 )
 __meta__ = {
 "_edit_group_": true
 }

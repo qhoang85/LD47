@@ -8,6 +8,7 @@ var _look_dir = 1.0
 var _is_using = false
 export(bool) var is_reflection = false
 var _is_showering = 0
+export(bool) var disable_motion_reset = false
 
 
 func _ready():
@@ -30,7 +31,8 @@ func _sign(x):
 
 
 func _process_input():
-	self._input = Vector2(0.0, 0.0)
+	if !self.disable_motion_reset:
+		self._input = Vector2(0.0, 0.0)
 	self._is_using = false
 	if Input.is_action_pressed("player_use"):
 		self._is_using = true
@@ -56,7 +58,7 @@ func _move(delta : float):
 	if self._input.length() > 0.0:
 		self._input = self._input.normalized()
 		is_moving = true
-		var movement = self.move_and_slide(self._input * self.speed)
+		self._input = self.move_and_slide(self._input * self.speed)
 	
 	if self._is_showering > 0:
 		$AnimationPlayer.play("shower")
