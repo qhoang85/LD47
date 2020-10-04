@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://graphics/spriteset.tres" type="TileSet" id=1]
 [ext_resource path="res://graphics/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://prefabs/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/drone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/scene_transitioner.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.9615, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,7 +27,7 @@ format = 1
 tile_data = PoolIntArray( 0, 11, 0, 1, 14, 0, 9, 13, 0, 10, 14, 0, 13, 14, 0, 65548, 7, 0, 131073, 4, 0, 196608, 13, 0, 196617, 13, 0, 196618, 12, 0, 196620, 13, 0, 262145, 6, 0, 262157, 8, 0 )
 
 [node name="Player" parent="TileMap/SpriteMap" instance=ExtResource( 3 )]
-position = Vector2( 104.644, 116.162 )
+position = Vector2( 104.644, 91.886 )
 
 [node name="Drone" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 16.381, 68.644 )
@@ -39,3 +43,12 @@ position = Vector2( 208.952, 21.1681 )
 
 [node name="Drone5" parent="TileMap/SpriteMap" instance=ExtResource( 4 )]
 position = Vector2( 160.442, 20.0863 )
+
+[node name="SceneTransitioner" type="Area2D" parent="."]
+script = ExtResource( 5 )
+scene_path = "res://scenes/breakroom.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransitioner"]
+position = Vector2( 103.176, 127.393 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="SceneTransitioner" to="SceneTransitioner" method="_on_body_entered"]
