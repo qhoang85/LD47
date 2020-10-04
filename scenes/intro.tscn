@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 3, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.35, 0.35, 1.0 ]
+"values": [ 0.0, 0.38, 0.38, 1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:visible")
@@ -74,17 +74,17 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 56.0
+margin_left = 48.0
 margin_top = 67.0
-margin_right = 264.0
+margin_right = 272.0
 margin_bottom = 112.0
 custom_fonts/font = ExtResource( 2 )
-text = "How many days has it been?
+text = "\"How many days has it been?\"
 
-How many more days until
-I can retire early?"
+\"How many more days until
+I can retire early?\""
 align = 1
-percent_visible = 0.0
+percent_visible = 0.38
 __meta__ = {
 "_edit_use_anchors_": false
 }

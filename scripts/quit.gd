@@ -1,6 +1,6 @@
 extends Control
 
-var end_triggered = false
+var end_trig = false
 
 onready var animation_player = $AnimationPlayer
 onready var indicator = $next_indicator
@@ -15,7 +15,7 @@ func _ready():
 
 
 func _unhandled_input(_event):
-	if end_triggered:
+	if end_trig:
 		get_tree().quit()
 
 
@@ -25,5 +25,5 @@ func twist():
 
 
 func end_triggered():
-	end_triggered = true
+	end_trig = true
 	indicator.visible = true

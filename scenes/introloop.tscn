@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "animate"
-length = 6.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CenterContainer/Label:percent_visible")
 tracks/0/interp = 1
@@ -14,10 +14,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2, 3, 5, 5.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.3, 0.3, 1.0 ]
+"values": [ 0.0, 0.32, 0.32, 0.864, 0.864, 1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:visible")
@@ -26,7 +26,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 6 ),
+"times": PoolRealArray( 0, 7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -72,15 +72,15 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 32.0
+margin_left = 28.0
 margin_top = 67.0
-margin_right = 288.0
+margin_right = 292.0
 margin_bottom = 112.0
 custom_fonts/font = ExtResource( 2 )
-text = "How many days has it been?
+text = "\"How many days has it been?\"
 
-How many more days until
-I can retire early... or ESCAPE?"
+\"How many more days until
+I can retire early... or ESCAPE?\""
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
