@@ -35,12 +35,12 @@ func _unhandled_input(_event):
 			scene_transition.right_out()
 			get_tree().change_scene("res://scenes/quit.tscn")
 			music.stop_music()
-			
 	elif doubt:
 		scene_transition.right_in()
 		yield(scene_transition.animation_player, "animation_finished")
 		scene_transition.right_out()
 		get_tree().change_scene("res://scenes/introloop.tscn")
+		player_stats.has_looped = true
 
 
 func _on_Yes_pressed():
@@ -48,7 +48,6 @@ func _on_Yes_pressed():
 	animation_player.play("animate")
 	yield(animation_player, "animation_finished")
 	doubt = true
-	player_stats.has_looped = true
 
 
 func _on_Yes_focus_entered():
